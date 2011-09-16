@@ -1,8 +1,11 @@
 %tr[todo]
   %td.actions
-    = link_to 'up', :action => 'move_up', :id => todo.id
+    = link_to 'up', move_up_todo_path(todo)
     %br
-    = link_to 'down', :action => 'move_down', :id => todo.id
-  %td= todo.title
+    = link_to 'down', move_down_todo_path(todo)
+    - if !todo.checked?
+      %br
+      = link_to 'check', check_todo_path(todo)
+  %td= todo.title_with_check
   %td= todo.description
   %td= todo.due_date

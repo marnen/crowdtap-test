@@ -20,6 +20,11 @@ class TodosController < ApplicationController
     redirect_to :action => 'index'
   end
   
+  def check
+    resource.check!
+    redirect_to :action => 'index'
+  end
+  
   private
   
   def begin_of_association_chain
