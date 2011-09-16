@@ -11,23 +11,25 @@ class TodosController < ApplicationController
   end
   
   def move_up
-    resource.move_higher
-    redirect_to :action => 'index'
+    quick_action :move_higher
   end
   
   def move_down
-    resource.move_lower
-    redirect_to :action => 'index'
+    quick_action :move_lower
   end
   
   def check
-    resource.check!
-    redirect_to :action => 'index'
+    quick_action :check!
   end
   
   private
   
   def begin_of_association_chain
     current_user
+  end
+  
+  def quick_action(method)
+    resource.send method
+    redirect_to :action => 'index'
   end
 end
