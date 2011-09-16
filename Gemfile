@@ -5,10 +5,6 @@ gem 'rails', '3.0.10'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :development, :test do
-  gem 'sqlite3'
-end
-
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -31,3 +27,11 @@ end
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+group :development, :test do
+  gem 'sqlite3' # deploying to Heroku
+  gem 'rspec-rails'
+  gem 'cucumber-rails'
+  gem 'autotest-rails'
+end
+
