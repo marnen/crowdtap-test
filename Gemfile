@@ -31,6 +31,7 @@ gem 'authlogic'
 
 group :development, :test do
   gem 'sqlite3' # deploying to Heroku
+  gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'rspec-rails'
   gem 'cucumber-rails'
   gem 'database_cleaner'
