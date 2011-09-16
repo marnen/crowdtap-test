@@ -1,0 +1,15 @@
+%h1 My Todos
+
+= render :partial => 'todo', :collection => collection
+
+= form_for @todo do |f|
+  %table
+    %tr
+      %th= f.label :title
+      %th= f.label :description
+      %th= f.label :due_date
+    %tr
+      %td= f.text_field :title
+      %td= f.text_field :description
+      %td= f.text_field :due_date
+  = f.submit 'Save'

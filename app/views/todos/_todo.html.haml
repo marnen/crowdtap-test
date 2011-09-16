@@ -1,0 +1,6 @@
+%article[todo]
+  %h1= todo.title
+  - if todo.description
+    %p= todo.description
+  - if todo.due_date
+    %p== Due #{todo.due_date}

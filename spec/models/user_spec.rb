@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 describe User do
+  describe 'associations' do
+    it 'should have many todos' do
+      User.reflect_on_association(:todos).macro.should == :has_many
+    end
+  end
+  
   describe 'validations' do
     before :each do
       @user = Factory :user
