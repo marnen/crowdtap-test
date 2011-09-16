@@ -57,5 +57,7 @@ CrowdtapTest::Application.routes.draw do
   # match ':controller(/:action(/:id(.:format)))'
   
   resource :user_session
-  match 'login' => 'user_sessions#create', :as => :login
+  match 'login' => 'user_sessions#new', :as => :login
+  
+  root :to => 'todos#index'
 end
