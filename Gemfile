@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.10'
 gem 'authlogic'
 gem 'inherited_resources'
+gem 'acts_as_list'
 gem 'haml'
 gem 'sass'
 
