@@ -3,7 +3,9 @@ require 'spec_helper'
 describe User do
   describe 'associations' do
     it 'should have many todos' do
-      User.reflect_on_association(:todos).macro.should == :has_many
+      a = User.reflect_on_association(:todos)
+      a.macro.should == :has_many
+      a.options[:order].should == 'position'
     end
   end
   

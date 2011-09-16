@@ -1,6 +1,8 @@
-%article[todo]
-  %h1= todo.title
-  - if todo.description
-    %p= todo.description
-  - if todo.due_date
-    %p== Due #{todo.due_date}
+%tr[todo]
+  %td.actions
+    = link_to 'up', :action => 'move_up', :id => todo.id
+    %br
+    = link_to 'down', :action => 'move_down', :id => todo.id
+  %td= todo.title
+  %td= todo.description
+  %td= todo.due_date

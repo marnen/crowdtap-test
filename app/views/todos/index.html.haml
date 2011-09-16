@@ -1,6 +1,12 @@
 %h1 My Todos
 
-= render :partial => 'todo', :collection => collection
+%table
+  %tr
+    %th.actions
+    %th Title
+    %th Description
+    %th Due date
+  = render :partial => 'todo', :collection => collection
 
 = form_for @todo do |f|
   %table

@@ -59,7 +59,12 @@ CrowdtapTest::Application.routes.draw do
   resource :user_session
   match 'login' => 'user_sessions#new', :as => :login
   
-  resources :todos
+  resources :todos do
+    member do
+      get 'move_up'
+      get 'move_down'
+    end
+  end
   
   root :to => 'todos#index'
 end
