@@ -30,6 +30,9 @@ GEM
       activesupport (= 3.0.10)
     activesupport (3.0.10)
     arel (2.0.10)
+    authlogic (3.0.3)
+      activerecord (>= 3.0.7)
+      activerecord (>= 3.0.7)
     autotest-rails (4.1.1)
       ZenTest (= 4.5)
     builder (2.1.2)
@@ -124,6 +127,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  authlogic
   autotest-rails
   cucumber-rails
   database_cleaner
