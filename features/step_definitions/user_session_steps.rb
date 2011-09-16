@@ -4,9 +4,10 @@ Given /^I am not logged in$/ do
   end
 end
 
-Given /^I am logged in$/ do
+Given /^I am logged in(?: as "([^"]*)")?$/ do |email|
+  email ||= Faker::Internet.email
   visit login_path
-  fill_in 'E-mail address', :with => Faker::Internet.email
+  fill_in 'E-mail address', :with => email
   click_button 'Log in'
 end
 

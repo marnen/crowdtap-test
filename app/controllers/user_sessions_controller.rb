@@ -7,10 +7,10 @@ class UserSessionsController < ApplicationController
   end
   
   def create
-    @user_session = UserSession.new(User.create! params[:user_session][:user])
+    @user_session = UserSession.new(User.find_or_create_by_email(params[:user_session][:user]), true)
     if @user_session.save
       flash[:notice] = "Login successful!"
-      redirect_back_or_default root_url
+      redirect_back_or_default todos_url
     else
       render :action => :new
     end
