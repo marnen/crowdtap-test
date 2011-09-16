@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 require 'spec_helper'
 
 describe Todo do
@@ -28,6 +30,29 @@ describe Todo do
     it 'should not be valid without a user' do
       @todo.user_id = nil
       @todo.should_not be_valid
+    end
+  end
+  
+  describe 'instance methods' do
+    describe 'title_with_check' do
+      it 'returns the title if checked is false' do
+        todo = Factory :todo, :checked => false
+        todo.title_with_check.should == todo.title
+      end
+      
+      it 'returns the title preceded by a check if checked is true' do
+        todo = Factory :todo, :checked => true
+        todo.title_with_check.should == "✓ #{todo.title}"
+      end
+    end
+    
+    describe 'check!' do
+      it 'should set checked to true' do
+        todo = Factory :todo, :checked => false
+        todo.check!
+        todo.should_not be_changed
+        todo.checked.should == true
+      end
     end
   end
 end
