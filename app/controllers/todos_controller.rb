@@ -10,6 +10,16 @@ class TodosController < ApplicationController
     create! { {:action => 'index'} }
   end
   
+  def move_up
+    resource.move_higher
+    redirect_to :action => 'index'
+  end
+  
+  def move_down
+    resource.move_lower
+    redirect_to :action => 'index'
+  end
+  
   private
   
   def begin_of_association_chain

@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe Todo do
+  it 'should act as a list' do
+    Factory(:todo).respond_to?(:in_list?).should == true
+  end
+  
   describe "associations" do
     it 'should belong to a user' do
       Todo.reflect_on_association(:user).macro.should == :belongs_to
