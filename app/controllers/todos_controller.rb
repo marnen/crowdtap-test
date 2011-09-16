@@ -1,5 +1,11 @@
 class TodosController < ApplicationController
+  inherit_resources
+  
   def index
-    render :inline => ''
+    @todo = Todo.new
+  end
+  
+  def create
+    create! { {:action => 'index'} }
   end
 end
