@@ -1,0 +1,7 @@
+%h1 Log in
+%p Please enter your e-mail address. If you don't already have an account, we'll create one.
+= form_for @user_session, :url => user_session_path do |f|
+  = f.fields_for :user do |u|
+    = u.label :email, 'E-mail address'
+    = u.email_field :email
+  = f.submit "Log in"

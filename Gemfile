@@ -1,6 +1,10 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.10'
+gem 'authlogic'
+gem 'inherited_resources'
+gem 'haml'
+gem 'sass'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -30,9 +34,12 @@ gem 'rails', '3.0.10'
 
 group :development, :test do
   gem 'sqlite3' # deploying to Heroku
+  gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'rspec-rails'
   gem 'cucumber-rails'
   gem 'database_cleaner'
   gem 'autotest-rails'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
 end
 
