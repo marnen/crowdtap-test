@@ -32,6 +32,8 @@ gem 'sass'
 #   gem 'webrat'
 # end
 
+gem 'heroku', :group => :development
+
 group :development, :test do
   gem 'sqlite3' # deploying to Heroku
   gem 'ruby-debug19', :require => 'ruby-debug'
