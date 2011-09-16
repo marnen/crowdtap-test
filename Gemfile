@@ -32,6 +32,7 @@ group :development, :test do
   gem 'sqlite3' # deploying to Heroku
   gem 'rspec-rails'
   gem 'cucumber-rails'
+  gem 'database_cleaner'
   gem 'autotest-rails'
 end
 
